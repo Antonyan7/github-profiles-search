@@ -7,10 +7,11 @@ import {
   githubSearchMiddleware,
   githubSearchSelector,
 } from '@/src/redux/slices/githubSearch';
-import PaginationControls from '@/components/shared/PaginationControls';
-import { Input } from '@/components/shared/Input';
-import Loader from '@/components/Icons/Loader';
-import GitHubUserList from '@/components/user/GithubUserList';
+import PaginationControls from '@/src/components/shared/PaginationControls';
+import { Input } from '@/src/components/ui/Input';
+import Loader from '@/src/components/Icons/Loader';
+import GitHubUserList from '@/src/components/user/GithubUserList';
+import { useDebounce } from '@/src/hooks/useDebounce';
 
 export default function HomePage() {
   const [query, setQuery] = useState('');
@@ -19,14 +20,13 @@ export default function HomePage() {
   const users = useSelector(githubSearchSelector.selectGitHubUsers);
   const loading = useSelector(githubSearchSelector.selectGitHubLoading);
   const error = useSelector(githubSearchSelector.selectGitHubError);
+  const debouncedQuery = useDebounce(query.trim(), 500);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      dispatch(githubSearchMiddleware.fetchUsers(query.trim()));
-    }, 500);
+    if (!debouncedQuery) return;
 
-    return () => clearTimeout(timer);
-  }, [query]);
+    dispatch(githubSearchMiddleware.fetchUsers(debouncedQuery));
+  }, [debouncedQuery]);
 
   return (
     <main className="min-h-screen p-6 bg-white text-gray-900 dark:bg-black dark:text-white transition-colors">

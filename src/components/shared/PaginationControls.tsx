@@ -1,13 +1,12 @@
 import React from 'react';
-import { Button } from '@/components/shared/Button';
+import { Button } from '@/src/components/ui/Button';
 interface Props {
-  currentPage?: number;
-  totalCount?: number;
+  currentPage: number;
+  totalCount: number;
   perPage?: number;
   maxVisible?: number;
   onPageChange: (page: number) => void;
 }
-
 export default function PaginationControls({
   currentPage,
   totalCount,
