@@ -29,11 +29,6 @@ export const totalCount = createSelector(
   (state) => state?.totalCount
 );
 
-export const isDarkMode = createSelector(
-  [selector],
-  (state) => state?.isDarkMode
-);
-
 export default {
   selectGitHubError,
   selectGitHubLoading,
@@ -42,5 +37,4 @@ export default {
   currentPage,
   totalCount,
   user,
-  isDarkMode,
 };

@@ -12,7 +12,6 @@ const {
   setCurrentPage,
   setError,
   setTotalCount,
-  setIsDarkMode,
 } = slice.actions;
 
 const fetchUsers =
@@ -72,8 +71,4 @@ const getUser = (username: string) => async (dispatch: AppDispatch) => {
   }
 };
 
-const updateIsDarkMode = (value: boolean) => async (dispatch: AppDispatch) => {
-  dispatch(setIsDarkMode(value));
-};
-
-export default { fetchUsers, fetchUserRepos, getUser, updateIsDarkMode };
+export default { fetchUsers, fetchUserRepos, getUser };
