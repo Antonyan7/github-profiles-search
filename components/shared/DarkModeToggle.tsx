@@ -29,7 +29,11 @@ export default function DarkModeToggle() {
 
   return (
     <div className="absolute top-3 right-3">
-      <Button className="bg-gray-600 disabled:opacity-50" onClick={toggleTheme}>
+      <Button
+        aria-label="Toggle dark mode"
+        className="bg-gray-600 disabled:opacity-50"
+        onClick={toggleTheme}
+      >
         {isDark ? <LightIcon /> : <DarkIcon />}
       </Button>
     </div>
