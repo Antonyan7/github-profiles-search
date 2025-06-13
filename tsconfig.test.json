@@ -1,16 +1,8 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "types": ["jest", "@testing-library/jest-dom"],
-    "allowJs": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "module": "esnext",
-    "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "skipLibCheck": true,
-    "noEmit": true,
-    "strict": true
+    "types": ["@testing-library/jest-dom", "jest-dom"],
   },
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts"]
+
+  "include": ["**/*.test.ts", "**/*.test.tsx"]
 }

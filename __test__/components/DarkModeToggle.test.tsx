@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import DarkModeToggle from '@/components/shared/DarkModeToggle';
+import DarkModeToggle from '@/src/components/shared/DarkModeToggle';
 
 describe('DarkModeToggle', () => {
   beforeEach(() => {
