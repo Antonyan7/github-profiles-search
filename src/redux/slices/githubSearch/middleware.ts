@@ -29,7 +29,7 @@ const fetchUsers =
         dispatch(setUsers([]));
         dispatch(setTotalCount(0));
       }
-    } catch (error) {
+    } catch {
       dispatch(setError('Failed to fetch users.'));
       dispatch(setUsers([]));
     } finally {
@@ -48,7 +48,7 @@ const fetchUserRepos =
       const repos = res.data;
 
       dispatch(setRepos(repos));
-    } catch (error) {
+    } catch {
       dispatch(setReposError('Failed to fetch repositories.'));
       dispatch(setRepos([]));
     } finally {
@@ -63,7 +63,7 @@ const getUser = (username: string) => async (dispatch: AppDispatch) => {
   try {
     const res = await githubManager.getUser(username);
     dispatch(setUser(res.data));
-  } catch (error) {
+  } catch {
     dispatch(setError('Failed to load user.'));
     dispatch(setUser(null));
   } finally {

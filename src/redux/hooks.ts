@@ -1,5 +1,5 @@
 import store from './store';
 
-const dispatch: unknown = store.dispatch;
+const dispatch = store.dispatch;
 
 export { dispatch };
