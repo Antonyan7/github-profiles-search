@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@/src/components/ui/button';
+import { Button } from '@/components/shared/Button';
 interface Props {
   currentPage?: number;
   totalCount?: number;
@@ -37,9 +37,11 @@ export default function PaginationControls({
         <Button
           key={page}
           onClick={() => onPageChange(page)}
-          className={`${
-            currentPage === page ? 'bg-blue-600 text-white' : 'bg-gray-400'
-          }`}
+          className={
+            currentPage === page
+              ? 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-400 dark:text-black dark:hover:bg-blue-500'
+              : 'bg-gray-300 text-black hover:bg-gray-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600'
+          }
         >
           {page}
         </Button>

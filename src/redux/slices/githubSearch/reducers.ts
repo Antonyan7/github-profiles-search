@@ -34,9 +34,6 @@ const reducers = createReducer({
   setCurrentPage(state, action: IAction<number>) {
     state.currentPage = action.payload;
   },
-  setIsDarkMode(state, action: IAction<boolean>) {
-    state.isDarkMode = action.payload;
-  },
 });
 
 export default reducers;

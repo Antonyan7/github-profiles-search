@@ -1,5 +1,3 @@
-import { ThemeMode } from '@/src/enums';
-
 export interface GitHubUser {
   login: string;
   avatar_url: string;
@@ -40,7 +38,6 @@ export interface GitHubSearchState {
   reposError: string;
   totalCount: number;
   currentPage: number;
-  isDarkMode: boolean;
 }
 
 export const getInitialState = (): GitHubSearchState => ({
@@ -53,7 +50,4 @@ export const getInitialState = (): GitHubSearchState => ({
   reposError: '',
   totalCount: 0,
   currentPage: 1,
-  isDarkMode:
-    typeof window !== 'undefined' &&
-    localStorage.getItem('dark-mode') === ThemeMode.DARK,
 });
