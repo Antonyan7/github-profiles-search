@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Button } from '@/components/shared/Button';
-import LightIcon from '@/components/Icons/LightIcon';
-import DarkIcon from '@/components/Icons/DarkIcon';
+import { Button } from '@/src/components/ui/Button';
+import LightIcon from '@/src/components/Icons/LightIcon';
+import DarkIcon from '@/src/components/Icons/DarkIcon';
 import { ThemeMode } from '@/src/enums';
 
 export default function DarkModeToggle() {

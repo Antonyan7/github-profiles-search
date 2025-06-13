@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import DarkModeToggle from '@/components/shared/DarkModeToggle';
+import DarkModeToggle from '@/src/components/shared/DarkModeToggle';
 
 interface Props {
   children: React.ReactNode;
